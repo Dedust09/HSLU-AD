@@ -5,6 +5,9 @@
  */
 package ch.hslu.ad.sw1;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * This class represents an Memory
  * @author Luke
@@ -14,32 +17,38 @@ public final class MemorySimple implements Memory {
 
     private int size;
     private int allocated;
+    private List<Allocation> allocations = new LinkedList<>();
 
     public MemorySimple(final int size) {
+        this.size = size;
     }
 
-    @java.lang.Override
+    @Override
     public Allocation malloc(int size) {
-        return null;
+        Allocation allocation = new Allocation(allocations.stream().mapToInt(i -> i.getSize()).sum(), size);
+        allocations.add(allocation);
+        this.allocated = allocations.indexOf(allocation);
+        return allocation;
     }
 
-    @java.lang.Override
+    @Override
     public void free(Allocation allocation) {
-
+        allocations.remove(allocation);
     }
 
-    @java.lang.Override
+    @Override
     public int getAllocated() {
         return allocated;
     }
 
-    @java.lang.Override
+    @Override
     public int getFree() {
-        return 0;
+        return  1;
     }
 
     @Override
     public String toString(){
-        return "freha";
+        int sum = allocations.stream().mapToInt(i -> i.getSize()).sum();
+        return "MemorySimple[Belegt: " + sum + "; Frei: " + (this.size - sum) + "]";
     }
 }
