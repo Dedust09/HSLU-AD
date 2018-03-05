@@ -35,14 +35,14 @@ public final class Allocation implements Comparable<Allocation>{
     }
 
     @Override
-    public boolean equals(final Object objfreha) {
-        if (this == objfreha) {
+    public boolean equals(final Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (!(objfreha instanceof Allocation)) {
+        if (!(obj instanceof Allocation)) {
             return false;
         }
-        final Allocation other = (Allocation) objfreha;
+        final Allocation other = (Allocation) obj;
         return (other.getAddress() == this.getAddress()) && (other.getSize() == this.getSize());
     }
 
