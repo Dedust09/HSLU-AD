@@ -6,7 +6,8 @@ public class Node implements Comparable<Node> {
     private int degree;
     private int depth;
     private String path;
-    private boolean isLeaf;
+    private Node leftChild;
+    private Node rightChild;
 
     public Node(final int val) {
         value = val;
@@ -32,6 +33,14 @@ public class Node implements Comparable<Node> {
         return isLeaf;
     }
 
+    public Node getLeftChild() {
+        return leftChild;
+    }
+
+    public Node getRightChild() {
+        return rightChild;
+    }
+
     public void setDegree(int degree) {
         this.degree = degree;
     }
@@ -46,6 +55,14 @@ public class Node implements Comparable<Node> {
 
     public void setLeaf(boolean leaf) {
         isLeaf = leaf;
+    }
+
+    public void setLeftChild(Node leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public void setRightChild(Node rightChild) {
+        this.rightChild = rightChild;
     }
 
     @Override
