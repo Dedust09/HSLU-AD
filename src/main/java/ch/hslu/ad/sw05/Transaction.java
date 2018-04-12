@@ -21,15 +21,16 @@ public class Transaction implements Runnable {
 
     @Override
     public void run(){
+        LOG.info("Vorher:    " + this.toString());
         for (int i = 0; i < this.amount; i++) {
             this.from.transfer(to,1);
         }
-        LOG.info(this.toString());
+        LOG.info("Nachher:    " + this.toString());
     }
 
     @Override
     public String toString () {
-        return (this.amount + " von " + from.toString() + " nach " + to.toString());
+        return ("Von: " + this.from.toString() + " Nach: " + this.to.toString() + " Menge: " + this.amount);
     }
 
 }
