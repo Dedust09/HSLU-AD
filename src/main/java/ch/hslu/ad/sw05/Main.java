@@ -37,8 +37,8 @@ public class Main {
         final Thread[] threads = new Thread[numbers * 2];
 
         for (int i = 0; i < numbers; i++ ) {
-            threads[i] = new Thread(new Transaction(source.get(i), target.get(i), 2000));
-            threads[i+numbers] = new Thread(new Transaction(target.get(i), source.get(i), 5000));
+            threads[i] = new Thread(new Transaction(source.get(i), target.get(i), 200000));
+            threads[i+numbers] = new Thread(new Transaction(target.get(i), source.get(i), 500000));
         }
 
         for (final Thread thread : threads) {
