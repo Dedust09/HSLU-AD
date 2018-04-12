@@ -25,7 +25,7 @@ public class Transaction implements Runnable {
         for (int i = 0; i < this.amount; i++) {
             this.from.transfer(to,1);
         }
-        LOG.info("Nachher:    " + this.toString());
+        LOG.info("Nachher:   " + this.toString());
     }
 
     @Override
