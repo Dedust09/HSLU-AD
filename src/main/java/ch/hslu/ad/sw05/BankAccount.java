@@ -6,20 +6,22 @@ package ch.hslu.ad.sw05;
 public class BankAccount {
 
     private int balance;
+    private int id;
 
     /**
      * Erzeugt ein Bankkonto mit einem Anfangssaldo.
      * @param balance Anfangssaldo
      */
-    public BankAccount(final int balance) {
+    public BankAccount(final int balance, final int id) {
         this.balance = balance;
+        this.id = id;
     }
 
     /**
      * Erzeugt ein Bankkonto mit Kontostand Null.
      */
-    public BankAccount() {
-        this(0);
+    public BankAccount(final int id) {
+        this(0, id);
     }
 
     /**
@@ -46,5 +48,10 @@ public class BankAccount {
     public void transfer(final BankAccount target, final int amount) {
         this.balance -= amount;
         target.deposite(amount);
+    }
+
+    @Override
+    public String toString() {
+        return ("Bankaccount: " + this.id + "   mit Balance: " + this.balance);
     }
 }
