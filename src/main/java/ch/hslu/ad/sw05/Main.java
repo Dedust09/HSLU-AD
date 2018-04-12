@@ -22,13 +22,13 @@ public class Main {
         for (int i = 0; i < numbers; i++ ) {
             BankAccount a = new BankAccount((int)Math.random() * 5000, i);
             source.add(a);
-            LOG.info(a.toString() + "erstellt und in source hinzugefügt");
+            LOG.info(a.toString() + "  erstellt und in source hinzugefügt");
         }
 
         for (int i = 0; i < numbers; i++ ) {
-            BankAccount a = new BankAccount((int)Math.random() * 5000, i + numbers);
+            BankAccount a = new BankAccount((int)(Math.random() * 5000), i + numbers);
             target.add(a);
-            LOG.info(a.toString() + "erstellt und in target hinzugefügt");
+            LOG.info(a.toString() + "  erstellt und in target hinzugefügt");
         }
     }
 
