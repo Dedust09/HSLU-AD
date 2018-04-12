@@ -20,7 +20,7 @@ public class Main {
         this.numbers =  numbers;
 
         for (int i = 0; i < numbers; i++ ) {
-            BankAccount a = new BankAccount((int)Math.random() * 5000, i);
+            BankAccount a = new BankAccount((int)(Math.random() * 5000), i);
             source.add(a);
             LOG.info(a.toString() + "  erstellt und in source hinzugefügt");
         }
