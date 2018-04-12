@@ -30,7 +30,7 @@ public class Node implements Comparable<Node> {
     }
 
     public boolean getIsLeaf() {
-        return isLeaf;
+        return false;
     }
 
     public Node getLeftChild() {
@@ -51,10 +51,6 @@ public class Node implements Comparable<Node> {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public void setLeaf(boolean leaf) {
-        isLeaf = leaf;
     }
 
     public void setLeftChild(Node leftChild) {
