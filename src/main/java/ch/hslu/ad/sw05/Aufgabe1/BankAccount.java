@@ -1,4 +1,4 @@
-package ch.hslu.ad.sw05;
+package ch.hslu.ad.sw05.Aufgabe1;
 
 /**
  * Einfaches Bankkonto, das nur den Kontostand beinhaltet.
