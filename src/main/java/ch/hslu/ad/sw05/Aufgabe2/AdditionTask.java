@@ -9,6 +9,7 @@ public class AdditionTask implements Runnable {
 
     private int rangeBegin;
     private int rangeEnd;
+    private long sum;
     private String n = "ke plan";
     private volatile Thread runThread;
     private volatile boolean isStopped = false;
@@ -35,11 +36,23 @@ public class AdditionTask implements Runnable {
     public void run() {
         this.runThread = Thread.currentThread();
         // Initialisierungsphase
-        long sum = 0;
-        // Arbeitsphase
-        for (int i = this.rangeBegin; i <= this.rangeEnd; i++) {
-            sum += i;
-        }
+            while (isStopped() == false && !Thread.currentThread().isInterrupted()) {
+
+                    long sum = 0;
+                    // Arbeitsphase
+                    for (int i = this.rangeBegin; i <= this.rangeEnd; i++) {
+                        sum += i;
+                    }
+
+                    this.sum = sum;
+
+            }
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                LOG.info(ex.toString());
+                runThread.interrupt();
+            }
         // Aufräumphase
         if (!isStopped()) {
             LOG.info(runThread.getName() + ": SUM" + n + " -> " + sum);
