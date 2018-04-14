@@ -36,16 +36,14 @@ public class AdditionTask implements Runnable {
     public void run() {
         this.runThread = Thread.currentThread();
         // Initialisierungsphase
-            while (isStopped() == false && !Thread.currentThread().isInterrupted()) {
+            while (!isStopped() && !Thread.currentThread().isInterrupted()) {
 
                     long sum = 0;
                     // Arbeitsphase
                     for (int i = this.rangeBegin; i <= this.rangeEnd; i++) {
                         sum += i;
                     }
-
                     this.sum = sum;
-
             }
             try {
                 Thread.sleep(10);
