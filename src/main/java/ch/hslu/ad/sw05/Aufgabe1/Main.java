@@ -47,7 +47,7 @@ public class Main {
     }
 
     public static void main(final String[] args){
-        Main main = new Main(10);
+        Main main = new Main(20);
 
         main.run();
 
