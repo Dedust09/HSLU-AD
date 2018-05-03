@@ -14,8 +14,11 @@ public class TestQuickSort {
     public static void main(final String[] args) {
 
         char[] a = {'l','k','a','s','j','d','u','i','v','h','v','w','e','f','h'};
+        char[] b = {'l','k','a','s','j','d','u','i','v','h','v','w','e','f','h'};
 
-        QuickSort.quickSort(a,0,14);
+        QuickSort.quickSort(a,0, a.length - 1);
+        QuickSort.quickSort(b);
+
 
     }
 }

@@ -1,5 +1,7 @@
 package ch.hslu.ad.SW10.Aufgabe2;
 
+import java.util.Random;
+
 public class QuickSort {
 
     public QuickSort() {
@@ -35,5 +37,18 @@ public class QuickSort {
         exchange(a, up, right); // Trennelement an endgültige Position (a[up])
         if (left < (up - 1)) quickSort(a, left, (up - 1)); // linke Hälfte
         if ((up + 1) < right) quickSort(a, (up + 1), right); // rechte Hälfte, ohne T’Elt.
+    }
+
+    public static final void quickSort (final char[] a) {
+        QuickSort.quickSort(a,0, a.length - 1);
+    }
+
+    public static final char[] randomChars(final int length) {
+        final char[] a = new char[length];
+        for (int i = 0; i < length; i++) {
+            Random r = new Random();
+            a[i] = (char) (r.nextInt(26) + 'a');
+        }
+        return a;
     }
 }
