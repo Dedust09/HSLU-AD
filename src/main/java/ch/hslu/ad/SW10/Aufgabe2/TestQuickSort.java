@@ -15,9 +15,7 @@ public class TestQuickSort {
 
         char[] a = {'l','k','a','s','j','d','u','i','v','h','v','w','e','f','h'};
 
-        LOG.info("Unsortiert: " + a);
-        QuickSort.quickSort(a,0,15);
-        LOG.info("Sortiert:   ");
+        QuickSort.quickSort(a,0,14);
 
     }
 }
