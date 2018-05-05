@@ -1,4 +1,4 @@
-package ch.hslu.ad.SW10.Aufgabe2;
+package ch.hslu.ad.SW10.Aufgabe3;
 
 import java.util.Random;
 
@@ -72,4 +72,65 @@ public class QuickSort {
         }
         return a;
     }
+
+    /**
+     * Array sortieren mit insertion sort
+     * @param a Array
+     */
+    public static void insertionSort(final char[] a) {
+        for (int i = 0; i < a.length; i++) {
+            int current = i;
+            if (current != a.length - 1) {
+                while (a[current] > a[current + 1]) {
+                    QuickSort.exchange(a, current, current + 1);
+                    if (current != 0) {
+                        current--;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Array sortieren mit quick insertion sort
+     * @param a Array
+     * @param TRESHOLD Grenzwert für die Sortierung mit insertion sort
+     */
+    public static final void quickInsertionSort(final char[] a, final int TRESHOLD) {
+        final int left = 0;
+        final int right = a.length - 1;
+        int up = left; // linke Grenze
+        int down = right - 1; // rechte Grenze (ohne Trennelement)
+        char t = a[right]; // rechtes Element als Trennelement
+        boolean allChecked = false;
+        do {
+            while (a[up] < t) {
+                up++; // suche grösseres (>=) Element von links an
+            }
+            while ((a[down] >= t) && (down > up)) {
+                down--; // suche echt kleineres(<) Element von rechts an
+            }
+            if (down > up) { // solange keine Überschneidung
+                exchange(a, up, down);
+                up++;
+                down--; // linke und rechte Grenze verschieben
+            } else {
+                allChecked = true; // Austauschen beendet
+            }
+        } while (!allChecked);
+        exchange(a, up, right); // Trennelement an endgültige Position (a[up])
+        if ((left - (up - 1)) == TRESHOLD) {
+            QuickSort.insertionSort(a);
+        } else {
+            quickSort(a, left, (up - 1)); // linke Hälfte
+        }
+        if (((up + 1) - right) == TRESHOLD) {
+            QuickSort.insertionSort(a);
+        } else {
+            if ((up + 1) < right)
+                quickSort(a, (up + 1), right); // rechte Hälfte, ohne T’Elt.}
+        }
+    }
+
+
 }
