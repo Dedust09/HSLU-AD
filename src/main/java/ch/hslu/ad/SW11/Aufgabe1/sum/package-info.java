@@ -17,4 +17,4 @@
 /**
  * Inhalt von N41 - Sumier-Beispiel zu Fork-Join-Pool mit RecursiveTask.
  */
-package ch.hslu.ad.n41.array.sum;
+package ch.hslu.ad.SW11.Aufgabe1.sum;

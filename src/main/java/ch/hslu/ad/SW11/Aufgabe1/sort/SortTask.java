@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ch.hslu.ad.n41.array.sort;
+package ch.hslu.ad.SW11.Aufgabe1.sort;
 
 import java.util.Arrays;
 import java.util.concurrent.RecursiveAction;

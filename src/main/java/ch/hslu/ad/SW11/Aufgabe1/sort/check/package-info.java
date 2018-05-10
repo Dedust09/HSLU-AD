@@ -17,4 +17,4 @@
 /**
  * Inhalt von N41 - Sortier-Check-Beispiel zu Fork-Join-Pool mit RecursiveTask.
  */
-package ch.hslu.ad.n41.array.sort.check;
+package ch.hslu.ad.SW11.Aufgabe1.sort.check;

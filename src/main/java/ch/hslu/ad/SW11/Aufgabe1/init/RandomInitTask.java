@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ch.hslu.ad.n41.array.init;
+package ch.hslu.ad.SW11.Aufgabe1.init;
 
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.ThreadLocalRandom;

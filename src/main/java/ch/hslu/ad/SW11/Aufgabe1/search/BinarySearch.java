@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ch.hslu.ad.n41.array.search;
+package ch.hslu.ad.SW11.Aufgabe1.search;
 
 /**
  * The {@code BinarySearch} class provides a static method for binary searching

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ch.hslu.ad.n41.array.sum;
+package ch.hslu.ad.SW11.Aufgabe1.sum;
 
 import java.util.concurrent.RecursiveTask;
 

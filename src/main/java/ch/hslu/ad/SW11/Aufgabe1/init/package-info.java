@@ -17,4 +17,4 @@
 /**
  * Inhalt von N41 - Array-Init-Beispiel zu Fork-Join-Pool mit RecursiveAction.
  */
-package ch.hslu.ad.n41.array.init;
+package ch.hslu.ad.SW11.Aufgabe1.init;

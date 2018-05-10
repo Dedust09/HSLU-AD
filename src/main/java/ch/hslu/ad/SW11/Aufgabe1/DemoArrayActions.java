@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ch.hslu.ad.n41.array;
+package ch.hslu.ad.SW11.Aufgabe1;
 
-import ch.hslu.ad.n41.array.init.RandomInitTask;
-import ch.hslu.ad.n41.array.search.BinarySearch;
-import ch.hslu.ad.n41.array.search.SearchTask;
-import ch.hslu.ad.n41.array.search.RecursiveSearchTask;
-import ch.hslu.ad.n41.array.sort.SortTask;
-import ch.hslu.ad.n41.array.sort.check.SortCheckTask;
-import ch.hslu.ad.n41.array.sum.SumTask;
+import ch.hslu.ad.SW11.Aufgabe1.init.RandomInitTask;
+import ch.hslu.ad.SW11.Aufgabe1.search.BinarySearch;
+import ch.hslu.ad.SW11.Aufgabe1.search.SearchTask;
+import ch.hslu.ad.SW11.Aufgabe1.search.RecursiveSearchTask;
+import ch.hslu.ad.SW11.Aufgabe1.sort.SortTask;
+import ch.hslu.ad.SW11.Aufgabe1.sort.check.SortCheckTask;
+import ch.hslu.ad.SW11.Aufgabe1.sum.SumTask;
 import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import org.apache.logging.log4j.LogManager;

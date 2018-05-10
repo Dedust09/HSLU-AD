@@ -17,4 +17,4 @@
 /**
  * Inhalt von N41 - Array-Such-Beispiele zu Fork-Join-Pool mit CountedCompleter.
  */
-package ch.hslu.ad.n41.array.search;
+package ch.hslu.ad.SW11.Aufgabe1.search;
