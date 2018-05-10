@@ -1,10 +1,10 @@
 package ch.hslu.ad.SW10.Aufgabe2;
 
-import ch.hslu.ad.sw03.BinaryTree;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.math.BigDecimal;
+
 
 public class TestQuickSort {
 
@@ -16,9 +16,10 @@ public class TestQuickSort {
 
     public static void main(final String[] args) {
 
-        final int smallSizeOfArray = 1500;
-        final int mediumSizeOfArray = 15000;
-        final int bigSizeOfArray = 150000;
+        final int smallSizeOfArray = 100000;
+        final int mediumSizeOfArray = 200_000;
+        final int bigSizeOfArray = 400_000;
+
 
         final long startTimeSmallSort = System.currentTimeMillis();
         QuickSort.quickSort(QuickSort.randomChars(smallSizeOfArray));

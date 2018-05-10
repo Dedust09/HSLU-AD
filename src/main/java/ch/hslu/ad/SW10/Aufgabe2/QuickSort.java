@@ -68,7 +68,7 @@ public class QuickSort {
         final char[] a = new char[length];
         for (int i = 0; i < length; i++) {
             Random r = new Random();
-            a[i] = (char) (r.nextInt(26) + 'a');
+            a[i] = (char) (r.nextInt(52) + 'A');
         }
         return a;
     }
