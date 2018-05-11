@@ -1,6 +1,5 @@
 package ch.hslu.ad.SW11.Aufgabe3;
 
-import ch.hslu.ad.SW11.Aufgabe2.TestParallelQuickSort;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +12,7 @@ public class TestFibo {
     public TestFibo() {}
 
     public static void main(final String[] args) {
-        int a = 20;
+        int a = 40;
         ForkJoinPool pool = new ForkJoinPool();
         ParallelFibonacci task = new ParallelFibonacci(a);
 
@@ -31,5 +30,12 @@ public class TestFibo {
         int resultRecursive = Fibonacci.fiboRecursive(a);
         long finish2 = System.currentTimeMillis();
         LOG.info("Rekursive Fibonacci-Berechnung: " + (finish2 - start2) + "ms, Zahl: " + resultRecursive);
+
+        // Iterative Berechnung
+        LOG.info("Iterative Fibonacci-Berechnung beginnt...");
+        long start3 = System.currentTimeMillis();
+        int resultIterative = Fibonacci.fiboIter(a);
+        long finish3 = System.currentTimeMillis();
+        LOG.info("Iterative Fibonacci-Berechnung: " + (finish3 - start3) + "ms, Zahl: " + resultIterative);
     }
 }
