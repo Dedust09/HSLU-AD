@@ -55,12 +55,12 @@ public final class DemoArrayActions {
      * @param args not used.
      */
     public static void main(final String[] args) {
-        final int size = 17;
+        final int size = 300_000_000;
         final int[] array = new int[size];
         final ForkJoinPool pool = new ForkJoinPool();
         final RandomInitTask initTask = new RandomInitTask(array, 100);
         pool.invoke(initTask);
-        LOG.info("Random Init.   : " + Arrays.toString(array));
+        /*LOG.info("Random Init.   : " + Arrays.toString(array));
         SumTask sumTask = new SumTask(array);
         long result = pool.invoke(sumTask);
         LOG.info("Init. Checksum : " + result);
@@ -68,16 +68,21 @@ public final class DemoArrayActions {
         final RecursiveSearchTask recSearchTask = new RecursiveSearchTask(key, array);
         printItem("Recurs. Search : ", key, pool.invoke(recSearchTask));
         final SearchTask searchTask = new SearchTask(key, array);
-        printItem("Counted Search : ", key, pool.invoke(searchTask));
+        printItem("Counted Search : ", key, pool.invoke(searchTask));*/
+
+        long start = System.currentTimeMillis();
         final SortTask sortTask = new SortTask(array);
         pool.invoke(sortTask);
-        LOG.info("Merge Sort     : " + Arrays.toString(array));
-        sumTask = new SumTask(array);
+        long finish = System.currentTimeMillis();
+        //LOG.info("Merge Sort     : " + Arrays.toString(array));
+        LOG.info("Merge Sort Time: " + (finish - start) + "ms");
+
+        /*sumTask = new SumTask(array);
         result = pool.invoke(sumTask);
         LOG.info("Sort Checksum  : " + result);
         final SortCheckTask check = new SortCheckTask(array);
         boolean ok = pool.invoke(check);
         LOG.info("Sort Check     : " + ok);
-        printItem("Binary Search  : ", key, BinarySearch.indexOf(array, key));
+        printItem("Binary Search  : ", key, BinarySearch.indexOf(array, key));*/
     }
 }
