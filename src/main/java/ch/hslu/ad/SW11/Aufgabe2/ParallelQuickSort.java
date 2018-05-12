@@ -24,6 +24,12 @@ public class ParallelQuickSort extends RecursiveAction{
         this.max = a.length - 1;
     }
 
+    /**
+     * Methode um zwei Arrays zu mergen
+     * @param min die untere Grenze
+     * @param mid die Mitte
+     * @param max die obere Grenze
+     */
     private void merge(final int min, final int mid, final int max){
         char[] buf = Arrays.copyOfRange(array, min, mid);
         int i = 0;
@@ -50,6 +56,12 @@ public class ParallelQuickSort extends RecursiveAction{
         }
     }
 
+    /**
+     * QuickSort Algorythmus zum Sortieren von einem Char Array
+     * @param a Array
+     * @param left linke Grenze
+     * @param right rechte Grenze
+     */
     public static final void quickSort(final char[] a, final int left, final int right) {
         int up = left; // linke Grenze
         int down = right - 1; // rechte Grenze (ohne Trennelement)
@@ -74,6 +86,12 @@ public class ParallelQuickSort extends RecursiveAction{
         if ((up + 1) < right) quickSort(a, (up + 1), right); // rechte Hälfte, ohne T’Elt.
     }
 
+    /**
+     * Methode zum austauschen von zwei Elementen in einem Array
+     * @param a
+     * @param firstIndex
+     * @param secondIndex
+     */
     private static final void exchange(final char[] a, final int firstIndex, final int secondIndex) {
         char tmp;
         tmp = a[firstIndex];
@@ -81,6 +99,11 @@ public class ParallelQuickSort extends RecursiveAction{
         a[secondIndex] = tmp;
     }
 
+    /**
+     * Methode zum Generieren eines zufälligen Char Arrays
+     * @param length länge des Arrays
+     * @return gibt das Array zurück
+     */
     public static final char[] randomChars(final int length) {
         final char[] a = new char[length];
         for (int i = 0; i < length; i++) {

@@ -14,26 +14,23 @@ public class TestParallelQuickSort {
     public static void main(final String[] args) {
         int sizeOfArray = 20_000;
         int TRESHOLD = 5;
-        char[] a = QuickSort.randomChars(sizeOfArray);
+        char[] a = ParallelQuickSort.randomChars(sizeOfArray);
         final ForkJoinPool pool = new ForkJoinPool();
         final ParallelQuickSort pQS = new ParallelQuickSort(a);
 
         long start = System.currentTimeMillis();
         pool.invoke(pQS);
         long finish = System.currentTimeMillis();
-
         LOG.info("Parallel Quicksort mit " + sizeOfArray + " Elementen: " + (finish - start) + " ms");
-/*
+
         long start2 = System.currentTimeMillis();
         QuickSort.quickSort(a);
         long finish2 = System.currentTimeMillis();
-
         LOG.info("Quicksort          mit " + sizeOfArray + " Elementen: " + (finish2 - start2) + " ms");
-*/
+
         long start3 = System.currentTimeMillis();
         QuickSort.quickInsertionSort(a, TRESHOLD);
         long finish3 = System.currentTimeMillis();
-
         LOG.info("QuickInsertionSort mit " + sizeOfArray + " Elementen: " + (finish3 - start3) + " ms");
 
 
