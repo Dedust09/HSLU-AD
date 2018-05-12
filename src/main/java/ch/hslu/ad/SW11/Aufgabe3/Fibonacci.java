@@ -11,8 +11,7 @@ public class Fibonacci {
     /**
      * Rekursive Berechnung der n-ten Fibonacci-Zahl
      *
-     * @param n
-     *            Gewünschte Zahl der Fiboncci-Folge - 1
+     * @param n Gewünschte Zahl der Fiboncci-Folge - 1
      * @return Zahl der Fiboncci-Folge
      */
     public static int fiboRec1(final int n) {
@@ -28,8 +27,7 @@ public class Fibonacci {
     /**
      * Iterative Berechnung der n-ten Fibonacci-Zahl
      *
-     * @param n
-     *            Gewünschte Zahl der Fibonacci-Folge
+     * @param n Gewünschte Zahl der Fibonacci-Folge
      * @return Zahl der Fibonacci-Folge
      */
     public static int fiboIter(final int n) {
