@@ -22,8 +22,7 @@ public class ParallelFibonacci extends RecursiveTask<Integer> {
             return 0;
         } else if (n == 1) {
             return 1;
-        }
-        else if (n < 20){
+        } else if (n < 20){
             return Fibonacci.fiboIter(n);
         } else {
             ParallelFibonacci task1 = new ParallelFibonacci(n - 2);
