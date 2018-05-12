@@ -6,7 +6,7 @@ import java.util.concurrent.RecursiveAction;
 
 public class ParallelQuickSort extends RecursiveAction{
 
-    private static final int THRESHOLD = 5;
+    private static final int THRESHOLD = 50_000_000;
     private final char[] array;
     private final int min;
     private final int max;
@@ -71,7 +71,7 @@ public class ParallelQuickSort extends RecursiveAction{
             while (a[up] < t) {
                 up++; // suche grösseres (>=) Element von links an
             }
-            while ((a[down] >= t) && (down > up)) {
+            while ((a[down] > t) && (down > up)) {
                 down--; // suche echt kleineres(<) Element von rechts an
             }
             if (down > up) { // solange keine Überschneidung

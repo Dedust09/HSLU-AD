@@ -12,9 +12,10 @@ public class TestParallelQuickSort {
 
 
     public static void main(final String[] args) {
-        int sizeOfArray = 20_000;
-        int TRESHOLD = 5;
+        int sizeOfArray = 200_000_000;
+        int TRESHOLD = 50_000_000;
         char[] a = ParallelQuickSort.randomChars(sizeOfArray);
+        QuickSort.quickInsertionSort(a, TRESHOLD);
         final ForkJoinPool pool = new ForkJoinPool();
         final ParallelQuickSort pQS = new ParallelQuickSort(a);
 
@@ -29,7 +30,6 @@ public class TestParallelQuickSort {
         LOG.info("Quicksort          mit " + sizeOfArray + " Elementen: " + (finish2 - start2) + " ms");
 
         long start3 = System.currentTimeMillis();
-        QuickSort.quickInsertionSort(a, TRESHOLD);
         long finish3 = System.currentTimeMillis();
         LOG.info("QuickInsertionSort mit " + sizeOfArray + " Elementen: " + (finish3 - start3) + " ms");
 
